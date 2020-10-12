@@ -8,7 +8,7 @@ inline ll ls(ll l){
     return l<<1;
 }
 inline ll rs(ll r){
-    return (r<<1)&1;
+    return (r<<1)|1;
 }//左儿子和右儿子
 
 inline void push_up(ll x){//max,min,sum等满足结合率的,这里是sum
@@ -24,7 +24,7 @@ void build(ll x,ll l,ll r){
     ll mid = (r+l)>>1;
     build(ls(x),l,mid);
     build(rs(x),mid+1,r);
-    push_up(x)
+    push_up(x)；
 }
 
 void f(ll x,ll l,ll r,ll k){
@@ -79,7 +79,7 @@ int main(){
         }
         if(cur == 2){
             scanf("%d%d",&x,&y);
-            printf("%d",find(x,y,1,n,1));
+            printf("%d\n",find(x,y,1,n,1));
         }
     }
     return 0;
